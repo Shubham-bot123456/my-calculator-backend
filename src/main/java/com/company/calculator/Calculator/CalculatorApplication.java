@@ -17,7 +17,7 @@ public class CalculatorApplication {
     }
 
 
-    @GetMapping("/calculate")
+    @PostMapping("/calculate")
     public String calculate(@RequestBody String string) {
         try {
             String immidiateAnswer = calculator.brackets(string);
