@@ -18,9 +18,9 @@ public class CalculatorApplication {
 
 
     @PostMapping("/calculate")
-    public String calculate(@RequestBody String string) {
+    public String calculate(@RequestBody Input input) {
         try {
-            String immidiateAnswer = calculator.brackets(string);
+            String immidiateAnswer = calculator.brackets(input.getInputString());
             return immidiateAnswer.substring(1, immidiateAnswer.length() - 1);
         } catch (Exception e) {
             return "syntax error";
