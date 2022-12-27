@@ -17,8 +17,8 @@ public class CalculatorApplication {
     }
 
 
-    @GetMapping("/calculate/{string}")
-    public String calculate(@PathVariable String string) {
+    @GetMapping("/calculate")
+    public String calculate(@RequestBody String string) {
         try {
             String immidiateAnswer = calculator.brackets(string);
             return immidiateAnswer.substring(1, immidiateAnswer.length() - 1);
